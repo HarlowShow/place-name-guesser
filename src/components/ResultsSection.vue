@@ -58,12 +58,15 @@ const playAgain = (() => {
                 <p> {{ string.string }}</p>
             </div>
         </div>
-    <button @click="playAgain"> Play Again </button>
+    <button class="btn" @click="playAgain"> Play Again </button>
     </div>
 </template>
 
 <style scoped>
 
+.btn {
+    margin-top: 2rem;
+}
 .results {
     text-align: start;
 }

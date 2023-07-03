@@ -47,19 +47,38 @@ const toggleModal = (() => {
 
 </template>
 
-<style scoped>
+<style>
 
 .content {
   display: flex;
   place-items: center;
   justify-content: center;
   margin: 0 auto;
+  @media (max-width: 480px) {
+    min-width: 300px;
+    /* width: 90%; */
+  }
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  @media (min-width: 480px) {
+    min-width: 350px;
+    width: 90%;
+  }
+  @media (min-width: 768px) {
+    width: 600px;
+  }
+  @media (min-width: 992px) {
+    width: 700px;
+  }
 }
 .top-menu {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 100%;
+  /* width: 100%; */
 }
 .main {
   @media (max-width: 480px) {
