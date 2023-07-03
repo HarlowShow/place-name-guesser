@@ -29,10 +29,12 @@ watch(
         border-radius: 15px;
         padding: 1rem;
     }
+    @media screen and (min-width: 768px){
+        .option:hover {
+            background-color: #185c36;
+            color: white;
+            cursor: pointer;
+        }
 
-    .option:hover {
-        background-color: #185c36;
-        color: white;
-        cursor: pointer;
     }
 </style>

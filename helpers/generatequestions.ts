@@ -6,7 +6,7 @@ export function useQuestions(real: string[], fake: string[]) {
     const [...sortedReal ] = real
    
 
-    for (let i = 0; questions.length < 4; i++) {
+    for (let i = 0; questions.length < 20; i++) {
         const thruple = []
         // get one answer from the fake
         const randomIdx = Math.floor(Math.random() * sortedFake.length)

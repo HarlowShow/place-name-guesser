@@ -33,7 +33,7 @@ const submitAnswer = ((ans: string) => {
   results.push(res)
 })
 const nextQuestion = (async (answer: string) => {
-  if (count.value === 3) {
+  if (count.value === 19) {
     submitAnswer(answer)
     emit('updateStage', results)
   } else {
