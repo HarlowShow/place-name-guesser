@@ -85,13 +85,16 @@ p {
     font-size: 1.5 rem;
 }
 
+
+
+
 h4 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     display: inline;
 }
 
 h3 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     text-align: start;
 }
 

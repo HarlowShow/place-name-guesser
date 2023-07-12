@@ -32,6 +32,7 @@ let avgZIndex = 0;
 let userZIndex = 0;
 let avgLeft = '';
 let userLeft = '';
+let theSame = '';
 
 // if average is higher than score, score has higher z-index
 if (rounded > score.score) {
@@ -39,6 +40,8 @@ if (rounded > score.score) {
     avgZIndex = 1
     userLeft = '30%'
     avgLeft = '95%'
+} else if (rounded === score.score) {
+    theSame = '(the same!)'
 } else {
     userZIndex = 1
     avgZIndex = 2
@@ -76,7 +79,7 @@ isReady = true
                 <span class="tooltip" :style="averageTooltip">Average Score</span>
             </span>
             <span class="user-score" :style="userStyle">
-                <span class="tooltip-lower" :style="userTooltip">Your Score</span>
+                <span class="tooltip-lower" :style="userTooltip">Your Score {{ theSame }}</span>
             </span>
         </div>
     </div>
@@ -101,7 +104,7 @@ isReady = true
 		bottom: 150%;
 		margin-bottom: 1em;
 		padding: 0.5rem;
-		background-color: #0b5c05;
+		background-color: #141514;
         color: white;
 		font-size: 1rem;
 		line-height: 1.6;
@@ -117,7 +120,7 @@ isReady = true
 			width: 0;
 			height: 0;
 			border: .5em solid transparent;
-			border-top-color: #0b5c05;
+			border-top-color: #141514;
 			transform: translate(-50%, 0);
 		}
 	}
@@ -129,7 +132,7 @@ isReady = true
 		top: 120%;
 		margin-bottom: 1em;
 		padding: 0.5rem;
-		background-color: #0b5c05;
+		background-color: #141514;
         color: white;
 		font-size: 1rem;
 		line-height: 1.6;
@@ -145,7 +148,7 @@ isReady = true
 			width: 0;
 			height: 0;
 			border: .5em solid transparent;
-			border-top-color: #0b5c05;
+			border-top-color: #141514;
 			transform: scaleY(-1);
 		}
 	}
@@ -155,7 +158,7 @@ isReady = true
   height: 20px; /* Can be anything */
   position: relative;
   /* margin: 60px 0 20px 0; Just for demo spacing */
-  background: #bababa;
+  background: #e2e2e1;
   border-radius: 25px;
   padding: 10px;
   box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
@@ -186,7 +189,7 @@ isReady = true
 }
 
 .user-score {
-    background-color: rgb(114, 1, 143);
+    background-color: rgb(153, 20, 236);
     background-image: linear-gradient(
     center bottom,
     rgb(89, 2, 94) 37%,
