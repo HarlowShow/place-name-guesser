@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useFacts } from '../../helpers/findfact.ts'
+import AverageScore from './AverageScore.vue'
+
 type Result = {
   answer: string,
   isCorrect: boolean
@@ -48,6 +50,9 @@ const playAgain = (() => {
     <div class="question-card">
         <div v-if="isReady === true">
             <h5> You Scored: {{ score }}/20</h5>
+            <Suspense>
+                <AverageScore :score="score"/>
+            </Suspense>
             <div class="results" v-for="(string, index) in strings">
                 <h3 class="question-label">Question {{  index + 1 }}:</h3>
                 <span v-if="string.isCorrect === true">
@@ -63,6 +68,7 @@ const playAgain = (() => {
 </template>
 
 <style scoped>
+
 
 .btn {
     margin-top: 2rem;
