@@ -40,7 +40,7 @@ return resultStrings
 const strings = prepareResults()
 
 const playAgain = (() => {
-    console.log('click')
+    // console.log('click')
     emit('updateStage')
 })
 

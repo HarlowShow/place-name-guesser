@@ -18,7 +18,7 @@ const onStart = (() => {
 })
 const onQuizComplete = ((results: Result[]) => {
   finalResults.value = results
-  console.log(results)
+  // console.log(results)
   stage.value = 'answers'
 })
 

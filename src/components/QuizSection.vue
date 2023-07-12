@@ -19,12 +19,12 @@ const results: result[] = []
 
 const submitAnswer = ((ans: string) => {
   let isCorrectAnswer = false
-  console.log('chosen answer' + ans)
+  // console.log('chosen answer' + ans)
   if (ans === correctAnswers[count.value]) {
-    console.log('correct')
+    // console.log('correct')
     isCorrectAnswer = true
   } else {
-    console.log('incorrect')
+    // console.log('incorrect')
   }
   const res = {
     answer: ans,
