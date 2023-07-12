@@ -26,8 +26,6 @@ const average = await calcAverage()
 const rounded = Math.trunc(average)
 const averageWidth = `${(rounded / 20) * 100}%`
 const userScore = `${(score.score / 20) * 100}%`
-console.log('average width' + averageWidth)
-console.log('user score width' + userScore)
 let avgZIndex = 0;
 let userZIndex = 0;
 let avgLeft = '';
