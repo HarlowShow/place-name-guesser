@@ -10,7 +10,7 @@ lerna-debug.log*
 # firebase
 # src/firebase
 node_modules
-dist
+# dist
 dist-ssr
 *.local
 
