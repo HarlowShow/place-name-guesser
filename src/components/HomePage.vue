@@ -7,7 +7,8 @@ const start = (() => {
 
 <template>
     <div class="question-card">
-        <h1>Test Your Knowledge of UK Placenames</h1>
+        <h1>Place Name or</h1>
+        <h1>Fake Name?</h1>
         <h2>Guess which of the three placenames is fake</h2>
       <button @click="start">Start</button>
     </div>

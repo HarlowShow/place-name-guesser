@@ -12,8 +12,12 @@ p, span {
   font-weight: 400;
 
   color-scheme: light dark;
-  color: black;
-  background-color: #242424;
+  --color-black: #2F3833;
+  --color-grey: #6F8579;
+  --color-off-white: #F7FFF6;
+  --color-light-gray: #ECF3EB;
+  --color-green-primary: #53BE7F;
+  --color-green-secondary: #5C9A76;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,7 +28,7 @@ p, span {
 
 a {
   font-weight: 500;
-  color: #646cff;
+  /* color: #646cff; */
   text-decoration: inherit;
 }
 a:hover {
@@ -32,21 +36,23 @@ a:hover {
 }
 
 body {
-  background-image: url("../src/assets/pastoral-background.jpg");
+  /* background-image: url("../src/assets/pastoral-background.jpg"); */
 
   min-height: 500px;
 
   /* Create the parallax scrolling effect */
-  background-attachment: fixed;
+  /* background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 
   margin: 0;
   display: flex;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #2BAE66;
+  /* background-color: #2BAE66; */
+  background-color: #5c9a76;
+background-image: url("data:image/svg+xml,%3Csvg width='40' height='12' viewBox='0 0 40 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6.172L6.172 0h5.656L0 11.828V6.172zm40 5.656L28.172 0h5.656L40 6.172v5.656zM6.172 12l12-12h3.656l12 12h-5.656L20 3.828 11.828 12H6.172zm12 0L20 10.172 21.828 12h-3.656z' fill='%2353be7f' fill-opacity='0.27' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
 h1 {

@@ -1,12 +1,29 @@
 <script setup lang="ts">
-import { watch } from 'vue'
+import { watch, ref, Ref, computed } from 'vue'
 import  QuestionOption from './QuestionOption.vue'
 const emit = defineEmits(['update'])
+const activeAnswer: Ref<string> = ref('')
+
 const props = defineProps<{ answers: string[] }>()
 let sortedAnswers = props.answers.sort(() => Math.random() - 0.5)
-const updateCount = ((answer: string) =>  {
-    emit('update', answer) 
-}) 
+
+const updateCount = (() =>  {
+    if (activeAnswer.value.length === 0) {
+        console.log('will show validation message')
+    } else {
+        emit('update', activeAnswer.value) 
+    }
+})
+
+const updateActive = ((answer: string) => {
+    activeAnswer.value = answer
+    console.log('selected: ' + activeAnswer.value)
+})
+
+const active = computed(() => {
+    return activeAnswer.value
+})
+
 watch(
   () => props.answers,
   () => {
@@ -16,25 +33,20 @@ watch(
 </script>
 
 <template>
-    <div v-for="a in sortedAnswers" class="option">
-       <QuestionOption :option="a" @submit="updateCount"/>
-    </div>  
+    <div>
+        <div v-for="a in sortedAnswers" class="option">
+                <QuestionOption :option="a" :active="active" @setactive="updateActive"/>
+        </div>  
+        <button @click="updateCount">Next</button>
+    </div>
 
 </template>
 
 <style scoped>
     .option {
-        background-color: #dae0dc;
-        margin-bottom: 1rem;
-        border-radius: 15px;
-        padding: 1rem;
+        padding-top: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
-    @media screen and (min-width: 768px){
-        .option:hover {
-            background-color: #185c36;
-            color: white;
-            cursor: pointer;
-        }
 
-    }
 </style>
