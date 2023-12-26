@@ -38,7 +38,7 @@ export const placeNamesReal: string[] = [
     "Giggleswick",
     // "Bellie",
     // "Skirpenbeck",
-    "Hooe",
+    // "Hooe",
     "Snodland",
     "Netherthong",
     "Tockholes",
@@ -49,7 +49,7 @@ export const placeNamesReal: string[] = [
     "Butt of Lewis",
     "Wrabness",
     // "Blubberhouses",
-    "Scratchy Intake"
+    // "Scratchy Intake"
 ]
 
 export const placeNamesFake: string[] = [

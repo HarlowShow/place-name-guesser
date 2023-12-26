@@ -10,4 +10,18 @@
 </template>
 
 <style scoped>
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
 </style>

@@ -3,6 +3,7 @@ import { nextTick, ref, Ref } from 'vue'
 import SingleQuestion from './SingleQuestion.vue'
 import { placeNamesReal, placeNamesFake } from '../../data/answers'
 import { useQuestions } from '../../helpers/generatequestions'
+// import { testFacts } from '../../helpers/findfact'
 
 const emit = defineEmits(['updateStage'])
 const count = ref(0)
@@ -16,6 +17,11 @@ type result = {
   isCorrect: boolean
 }
 const results: result[] = []
+
+// testing - check results data
+// for(let i = 0; i < placeNamesReal.length; i++) {
+//   testFacts(placeNamesReal[i] as string)
+// }
 
 const submitAnswer = ((ans: string) => {
   let isCorrectAnswer = false
@@ -49,7 +55,6 @@ const nextQuestion = (async (answer: string) => {
 <template>
   <div class="quiz">
     <div class="heading-wrapper">
-      
       <h1 class="question-number">Question {{ count + 1 }} of 20</h1>
     </div>
     <SingleQuestion :answers="activeQuestion" @update="nextQuestion"/>
@@ -63,6 +68,7 @@ h1.question-number {
   font-size: 1rem;
   color: var(--color-grey);
   padding-top: 0;
+  font-weight: 600;
 }
 
 .heading-wrapper {

@@ -10,7 +10,7 @@ const start = (() => {
     <div class="quiz">
         <div class="title">
             <h1>Place Name or Fake Name?</h1>
-            <h2>Guess which of the three UK placenames is fake</h2>
+            <h2>Guess which of three UK placenames is fake</h2>
         </div>
       <MainButton @click="start">Start</MainButton>
     </div>
@@ -19,9 +19,16 @@ const start = (() => {
 <style scoped>
 
 h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 0;
     line-height: 1.2;
+    font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 500;
 }
 
 .title {

@@ -20,7 +20,7 @@ const updateCount = (() =>  {
 
 const updateActive = ((answer: string) => {
     activeAnswer.value = answer
-    console.log('selected: ' + activeAnswer.value)
+    // console.log('selected: ' + activeAnswer.value)
 })
 
 const active = computed(() => {

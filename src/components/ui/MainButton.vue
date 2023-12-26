@@ -13,6 +13,8 @@
     to left bottom,
     var(--color-one),
     var(--color-two)
-  )
+  );
+
+  font-weight: 300;
 }
 </style>

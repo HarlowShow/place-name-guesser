@@ -6,6 +6,8 @@ import ResultsSection from './components/ResultsSection.vue'
 import HelpButton from './components/HelpButton.vue'
 import CloseButton from './components/CloseButton.vue'
 import HelpModal from './components/HelpModal.vue'
+
+
 const modalIsOpen = ref(false)
 const finalResults: Ref<Result[]> = ref([])
 type Stage = 'home' | 'quiz' | 'answers'
