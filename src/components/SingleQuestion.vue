@@ -35,20 +35,33 @@ watch(
 </script>
 
 <template>
-    <div>
+    <div class="option-wrapper">
         <div v-for="a in sortedAnswers" class="option">
                 <QuestionOption :option="a" :active="active" @setactive="updateActive"/>
+        </div>
+        <div class="next-button">
+            <MainButton @click="updateCount">Next</MainButton>
         </div>  
-        <MainButton @click="updateCount">Next</MainButton>
     </div>
 
 </template>
 
 <style scoped>
+
+.option-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
     .option {
         padding-top: 1rem;
         padding-left: 1rem;
         padding-right: 1rem;
+        width: 80%;
     }
 
+    .next-button {
+        padding-top: 2rem;
+    }
 </style>

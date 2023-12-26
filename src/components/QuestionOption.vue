@@ -29,6 +29,7 @@ const setActiveAnswer = () => {
 
 .button-wrapper {
   border: 4px solid transparent;
+  width: 100%;
 }
 button.active {
   background: linear-gradient(var(--color-off-white), var(--color-off-white))
@@ -46,7 +47,7 @@ button.active {
 button {
   color: var(--color-black);
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   background-color: var(--color-off-white);
   border-radius: var(--button-border-radius);
 }

@@ -80,7 +80,7 @@ type Funfacts = {
 }
 
 export const funFacts: Funfacts = {
-    "Upperthong": "Every year Upperthong hosts an annual event called \"Thongathon.\" Thongathon is a quirky charity event where participants gather to attempt the world record for the longest distance covered in a relay race while wearing a thong. It combines fun, athleticism, and a touch of eccentricity to raise money for various charitable causes.",
+    "Upperthong": "Every year Upperthong hosts the annual \"Thongathon event.\"",
     "Shitterton": "The sign of the hamlet of \”Shitterton,\” has been stolen multiple times by pranksters and collectors. To combat the thefts, the residents of Shitterton decided to replace the traditional village sign with a large Purbeck stone, weighing over a ton, engraved with the name \”Shitterton.\” The heavy stone sign has proven to be more challenging to steal, ensuring that the village retains its distinctive identity. ",
     "Fingringhoe": "The name \”Fingringhoe\” is believed to have originated from the Old English words \”Fingre\” and \”Hoh,\” which mean \”finger\” and \”spur or promontory\” respectively. The combination of these words led to the name \”Fingringhoe,\” which can be loosely translated as \”the spur or promontory shaped like a finger.\"",
     "Wetwang": "The name \”Wetwang\” is derived from the Old Norse language and translates to \”wet field\” or \”marshy meadow.\”",
