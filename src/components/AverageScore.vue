@@ -178,11 +178,11 @@ isReady = true
 }
 
 .average-score {
-    background-color: rgb(46, 194, 43);
+    background-color: var(--color-green-primary);
     background-image: linear-gradient(
     center bottom,
-    rgb(43, 194, 83) 37%,
-    rgb(84, 240, 84) 69%
+    var(--color-green-primary),
+    var(--color-green-secondary)
   );
 }
 

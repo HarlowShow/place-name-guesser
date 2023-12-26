@@ -121,6 +121,6 @@ h3 {
 }
 
 .incorrect {
-  color: red;
+  color: var(--color-red);
 }
 </style>
