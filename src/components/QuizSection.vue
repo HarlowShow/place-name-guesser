@@ -47,9 +47,9 @@ const nextQuestion = (async (answer: string) => {
 </script>
 
 <template>
-  <div class="question-card">
+  <div class="quiz">
     <div class="heading-wrapper">
-      <h1>Question {{ count + 1 }} of 20</h1>
+      <h1 class="question-number">Question {{ count + 1 }} of 20</h1>
     </div>
     <SingleQuestion :answers="activeQuestion" @update="nextQuestion"/>
   </div>
@@ -58,7 +58,7 @@ const nextQuestion = (async (answer: string) => {
 
 <style>
 
-h1 {
+h1.question-number {
   font-size: 1rem;
   color: var(--color-grey);
   padding-top: 0;
@@ -66,16 +66,7 @@ h1 {
 
 .heading-wrapper {
   display: flex;
-  align-items: start;
+  justify-content: center;
   text-transform: uppercase;
-}
-
-.question-card {
-  background-color: var(--color-light-gray);
-  padding: 2rem;
-  border-radius: 15px;
-}
-.read-the-docs {
-  color: #888;
 }
 </style>

@@ -2,12 +2,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Work Sans', sans-serif;
 }
 
-p, span {
-  font-family: 'Merriweather', serif;
-}
-
 :root {
-  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -16,8 +12,16 @@ p, span {
   --color-grey: #6F8579;
   --color-off-white: #F7FFF6;
   --color-light-gray: #ECF3EB;
-  --color-green-primary: #53BE7F;
-  --color-green-secondary: #5C9A76;
+  --color-green-primary: rgba(83, 190, 127, 1);
+  --color-green-secondary: rgba(92, 154, 118, 1);
+  --color-green-primary-translucent: rgba(83, 190, 127, 0.5);
+  --color-green-secondary-translucent: rgba(92, 154, 118, 0.5);
+  --color-green-accent: #bcebcb;
+  --button-border-radius: 12px;
+
+  --color-one: #175234;
+  --color-two: #286149;
+  --color-three: #3A5949;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -36,57 +40,69 @@ a:hover {
 }
 
 body {
-  /* background-image: url("../src/assets/pastoral-background.jpg"); */
-
-  min-height: 500px;
-
-  /* Create the parallax scrolling effect */
-  /* background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
-
-  margin: 0;
+  margin: 0 auto;
+  padding: 0;
   display: flex;
-  min-width: 320px;
-  min-height: 100vh;
+  width: 1000px;
+  max-width: 100%;
+  height: 100vh;
+  max-height: 100%;
+
+  /* min-width: 320px;
+  min-height: 100vh; */
   /* background-color: #2BAE66; */
   background-color: #5c9a76;
 background-image: url("data:image/svg+xml,%3Csvg width='40' height='12' viewBox='0 0 40 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6.172L6.172 0h5.656L0 11.828V6.172zm40 5.656L28.172 0h5.656L40 6.172v5.656zM6.172 12l12-12h3.656l12 12h-5.656L20 3.828 11.828 12H6.172zm12 0L20 10.172 21.828 12h-3.656z' fill='%2353be7f' fill-opacity='0.27' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, 
+              transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: var(--button-border-radius);
   font-size: 2rem;
   font-weight: 500;
   font-family: inherit;
   background-color: #185c36;
   color: white;
-  cursor: pointer;
-  transition: border-color 0.25s;
 }
-button:hover {
+/* button:hover {
   border-color: white;
-}
+} */
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
 .card {
-  padding: 2em;
+  padding: 2rem;
 }
 
 #app {
+  /* width: 100%; */
   width: 100%;
-  margin: 0 auto;
   /* padding: 2rem; */
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quiz {
+  background-color: var(--color-light-gray);
+  height: fit-content;
+  max-height: 100wh;
+  padding: 2rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
 }

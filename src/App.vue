@@ -49,63 +49,38 @@ const toggleModal = (() => {
 
 <style>
 
+.main {
+  display: flex;
+  width: 100%;
+}
+
 .content {
   display: flex;
   place-items: center;
   justify-content: center;
-  margin: 0 auto;
-  @media (max-width: 480px) {
-    min-width: 300px;
-    /* width: 90%; */
+  width: 320px;
+}
+
+@media (min-width: 640px) {
+  .content {
+    width: 500px;
   }
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 1.5rem;
-    }
+}
+
+@media (max-width: 300px) {
+  .content {
+    width: 250px;
   }
-  @media (min-width: 480px) {
-    min-width: 350px;
-    width: 90%;
-  }
-  @media (min-width: 768px) {
-    width: 600px;
-  }
-  @media (min-width: 992px) {
-    width: 700px;
+
+  .quiz {
+    width: 100%;
   }
 }
 .top-menu {
+  align-self: flex-end;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   /* width: 100%; */
-}
-.main {
-  @media (max-width: 480px) {
-    min-width: 300px;
-    width: 90%;
-  }
-  @media (min-width: 480px) {
-    min-width: 350px;
-    width: 90%;
-  }
-  @media (min-width: 768px) {
-    width: 600px;
-  }
-  @media (min-width: 992px) {
-    width: 700px;
-  }
-}
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
 }
 </style>

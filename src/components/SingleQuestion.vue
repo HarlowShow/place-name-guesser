@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { watch, ref, Ref, computed } from 'vue'
 import  QuestionOption from './QuestionOption.vue'
+import MainButton from './MainButton.vue'
+
 const emit = defineEmits(['update'])
 const activeAnswer: Ref<string> = ref('')
 
@@ -37,7 +39,7 @@ watch(
         <div v-for="a in sortedAnswers" class="option">
                 <QuestionOption :option="a" :active="active" @setactive="updateActive"/>
         </div>  
-        <button @click="updateCount">Next</button>
+        <MainButton @click="updateCount">Next</MainButton>
     </div>
 
 </template>
