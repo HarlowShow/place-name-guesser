@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MainButton from './MainButton.vue'
+import MainButton from './ui/MainButton.vue'
 const emit = defineEmits(['updateStage'])
 const start = (() => {
     emit('updateStage')

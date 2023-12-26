@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { watch, ref, Ref, computed } from 'vue'
 import  QuestionOption from './QuestionOption.vue'
-import MainButton from './MainButton.vue'
+import MainButton from './ui/MainButton.vue'
 
 const emit = defineEmits(['update'])
 const activeAnswer: Ref<string> = ref('')
@@ -13,7 +13,8 @@ const updateCount = (() =>  {
     if (activeAnswer.value.length === 0) {
         console.log('will show validation message')
     } else {
-        emit('update', activeAnswer.value) 
+        emit('update', activeAnswer.value)
+        activeAnswer.value = ''
     }
 })
 

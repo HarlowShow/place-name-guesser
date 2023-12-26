@@ -49,6 +49,7 @@ const nextQuestion = (async (answer: string) => {
 <template>
   <div class="quiz">
     <div class="heading-wrapper">
+      
       <h1 class="question-number">Question {{ count + 1 }} of 20</h1>
     </div>
     <SingleQuestion :answers="activeQuestion" @update="nextQuestion"/>
