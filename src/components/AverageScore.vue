@@ -110,19 +110,19 @@ isReady = true
 		white-space: nowrap;
 		transform: translate(-50%, 1em);
 		transition: all .15s ease-in-out;
-		&::before {
-			content: '';
-			position: absolute;
-			top: 100%;
-			left: 50%;
-			width: 0;
-			height: 0;
-			border: .5em solid transparent;
-			border-top-color: #141514;
-			transform: translate(-50%, 0);
-		}
 	}
-
+    
+    .tooltip::before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border: .5em solid transparent;
+        border-top-color: #141514;
+        transform: translate(-50%, 0);
+    }
     .tooltip-lower {
         overflow: visible;
 		position: absolute;
@@ -138,19 +138,19 @@ isReady = true
 		white-space: nowrap;
 		transform: translate(-50%, 1em);
 		transition: all .15s ease-in-out;
-		&::before {
-			content: '';
-			position: absolute;
-			bottom: 100%;
-			left: 40%;
-			width: 0;
-			height: 0;
-			border: .5em solid transparent;
-			border-top-color: #141514;
-			transform: scaleY(-1);
-		}
 	}
-
+    
+    .tooltip-lower::before {
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: 40%;
+        width: 0;
+        height: 0;
+        border: .5em solid transparent;
+        border-top-color: #141514;
+        transform: scaleY(-1);
+    }
 .meter {
   box-sizing: content-box;
   height: 20px; /* Can be anything */
