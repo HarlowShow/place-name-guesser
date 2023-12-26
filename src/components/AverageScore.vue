@@ -99,7 +99,7 @@ isReady = true
         overflow: visible;
 		position: absolute;
 		left: 50%;
-		bottom: 150%;
+		bottom: 160%;
 		margin-bottom: 1em;
 		padding: 0.5rem;
 		background-color: #141514;
@@ -127,7 +127,7 @@ isReady = true
         overflow: visible;
 		position: absolute;
 		left: 90%;
-		top: 120%;
+		top: 110%;
 		margin-bottom: 1em;
 		padding: 0.5rem;
 		background-color: #141514;
@@ -136,7 +136,7 @@ isReady = true
 		line-height: 1.6;
 		text-align: left;
 		white-space: nowrap;
-		transform: translate(-50%, 1em);
+		transform: translate(-40%, 1em);
 		transition: all .15s ease-in-out;
 	}
     
@@ -194,24 +194,5 @@ isReady = true
     rgb(63, 4, 99) 69%
   );
     top: -20px;
-}
-    .score {
-        width: 100%;
-        position: relative;
-    }
-    .max-score {
-    position: absolute;
-    width: 100%;
-    background-color: blueviolet;
-    height: 20px;
-    border-radius: 15px;
-}
-
-    .inner-score {
-    width: 50%;
-    position: absolute;
-    background-color: aquamarine;
-    height: 20px;
-    border-radius: 15px;
 }
 </style>
