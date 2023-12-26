@@ -37,12 +37,12 @@ const toggleModal = (() => {
     <CloseButton v-else />
   </div>
   <div class="content">
-    <HelpModal class="modal" v-if="modalIsOpen===true"></HelpModal>
-    <div class="main" v-else="modalIsOpen===false">
-      <HomePage v-if="stage === 'home'" @updateStage="onStart"/>
-      <QuizSection @updateStage="onQuizComplete" v-else-if="stage === 'quiz'"/>
-      <ResultsSection @updateStage="onPlayAgain" :results="finalResults" v-else />
-    </div>
+    <HelpModal class="modal" v-show="modalIsOpen===true"></HelpModal>
+      <div class="main" v-show="modalIsOpen===false">
+        <HomePage v-if="stage === 'home'" @updateStage="onStart"/>
+        <QuizSection @updateStage="onQuizComplete" v-else-if="stage === 'quiz'"/>
+        <ResultsSection @updateStage="onPlayAgain" :results="finalResults" v-else />
+      </div>
   </div>
 
 </template>
