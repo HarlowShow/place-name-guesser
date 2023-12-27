@@ -1,6 +1,7 @@
 export function useQuestions(real: string[], fake: string[]) {
     // type threeArray = [string, string, string]
    //  type questionsArray = threeArray[]
+   console.log('generating questions')
     const questions = []
     const [...sortedFake ] = fake
     const [...sortedReal ] = real

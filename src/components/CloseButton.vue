@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import CloseIcon from './CloseIcon.vue'
+import IconButton from './ui/IconButton.vue'
+import CloseIcon from './icons/CloseIcon.vue'
 // const emit = defineEmits(['updateStage'])
 // const start = (() => {
 //     emit('updateStage')
@@ -7,9 +8,9 @@ import CloseIcon from './CloseIcon.vue'
 </script>
 
 <template>
-    <div class="icon-box">
+    <IconButton class="icon-box">
        <CloseIcon />
-    </div>
+    </IconButton>
 </template>
 
 <style scoped>

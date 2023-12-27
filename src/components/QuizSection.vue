@@ -3,6 +3,7 @@ import { nextTick, ref, Ref } from 'vue'
 import SingleQuestion from './SingleQuestion.vue'
 import { placeNamesReal, placeNamesFake } from '../../data/answers'
 import { useQuestions } from '../../helpers/generatequestions'
+import BackButton from './BackButton.vue'
 // import { testFacts } from '../../helpers/findfact'
 
 const emit = defineEmits(['updateStage'])
@@ -12,10 +13,12 @@ const [...questions] = questionsRef
 const correctAnswers: string[] = []
 questions.forEach((a) => correctAnswers.push(a[0]))
 const activeQuestion: Ref<string[]> = ref(questions[0])
+
 type result = {
   answer: string,
   isCorrect: boolean
 }
+type answerTuple = [number, string]
 const results: result[] = []
 
 // testing - check results data
@@ -23,22 +26,26 @@ const results: result[] = []
 //   testFacts(placeNamesReal[i] as string)
 // }
 
-const submitAnswer = ((ans: string) => {
+const submitAnswer = ((ans: answerTuple) => {
   let isCorrectAnswer = false
+  const idx = ans[0]
+  const string = ans[1]
+  console.log('answer submitted at index: ' + idx + 'and chosen string was: ' + string)
+  console.log('correct answer for this question should be: ' + correctAnswers[idx])
   // console.log('chosen answer' + ans)
-  if (ans === correctAnswers[count.value]) {
-    // console.log('correct')
+  if (string === correctAnswers[idx]) {
+    console.log('correct')
     isCorrectAnswer = true
   } else {
-    // console.log('incorrect')
+    console.log('incorrect')
   }
   const res = {
-    answer: ans,
+    answer: string,
     isCorrect: isCorrectAnswer
   }
-  results.push(res)
+  results[idx] = res
 })
-const nextQuestion = (async (answer: string) => {
+const nextQuestion = (async (answer: answerTuple) => {
   if (count.value === 19) {
     submitAnswer(answer)
     emit('updateStage', results)
@@ -50,14 +57,23 @@ const nextQuestion = (async (answer: string) => {
   }
 })
 
+const goToPrevious = (() => {
+  if (count.value > 0) {
+    count.value -= 1;
+    activeQuestion.value = questions[count.value]
+  }
+})
+
 </script>
 
 <template>
   <div class="quiz">
     <div class="heading-wrapper">
-      <h1 class="question-number">Question {{ count + 1 }} of 20</h1>
+      <BackButton @click="goToPrevious" class="align-left"></BackButton>
+      <h1 class="question-number centre">Question {{ count + 1 }} of 20</h1>
+      <div></div>
     </div>
-    <SingleQuestion :answers="activeQuestion" @update="nextQuestion"/>
+    <SingleQuestion :results="results" :index="count" :answers="activeQuestion" @update="nextQuestion"/>
   </div>
 
 </template>
@@ -72,8 +88,18 @@ h1.question-number {
 }
 
 .heading-wrapper {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
   text-transform: uppercase;
+  width: 100%;
 }
+
+.centre {
+  justify-self: center;
+}
+
+/* .align-left {
+  justify-self: flex-start;
+} */
 </style>

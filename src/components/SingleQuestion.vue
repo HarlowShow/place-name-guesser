@@ -1,43 +1,68 @@
 <script setup lang="ts">
-import { watch, ref, Ref, computed } from 'vue'
+import { ref, Ref, computed } from 'vue'
 import  QuestionOption from './QuestionOption.vue'
 import MainButton from './ui/MainButton.vue'
 
 const emit = defineEmits(['update'])
 const activeAnswer: Ref<string> = ref('')
+    type result = {
+  answer: string,
+  isCorrect: boolean
+}
 
-const props = defineProps<{ answers: string[] }>()
-let sortedAnswers = props.answers.sort(() => Math.random() - 0.5)
+const prevAnswers: Ref<string[]> = ref([])
+
+const props = defineProps<{ answers: string[], results: result[], index: number }>()
+// let sortedAnswers = props.answers.sort(() => Math.random() - 0.5)
 
 const updateCount = (() =>  {
-    if (activeAnswer.value.length === 0) {
+    // if answer not selected or not selected previously
+    if (activeAnswer.value.length === 0 && !prevAnswers.value[props.index]) {
+        console.log(prevAnswers.value[props.index])
+        console.log(props.index)
         console.log('will show validation message')
+    } else if (activeAnswer.value.length === 0){
+        // if active not updated, submit previous
+        const tuple = [props.index, prevAnswers.value[props.index]]
+        emit('update', tuple)
     } else {
-        emit('update', activeAnswer.value)
+        // otherwise submit active
+        const tuple = [props.index, activeAnswer.value]
+        emit('update', tuple)
         activeAnswer.value = ''
     }
 })
 
 const updateActive = ((answer: string) => {
+    console.log('updating active')
     activeAnswer.value = answer
+    console.log('updating previous answer to: ' + activeAnswer.value)
+    prevAnswers.value[props.index] = activeAnswer.value
     // console.log('selected: ' + activeAnswer.value)
 })
 
 const active = computed(() => {
-    return activeAnswer.value
+    return prevAnswers.value[props.index] ?? activeAnswer.value
 })
 
-watch(
-  () => props.answers,
-  () => {
-    sortedAnswers = props.answers.sort(() => Math.random() - 0.5)
-  }
-)
+// watch(
+//   () => props.answers,
+//   () => {
+//     sortedAnswers = props.answers.sort(() => Math.random() - 0.5)
+//   }
+// )
+
+// watch(
+//   () => props.result,
+//   () => {
+//     console.log('result changed, already selected is now: ' + alreadySelected.value)
+//   }
+// )
 </script>
 
 <template>
     <div class="option-wrapper">
-        <div v-for="a in sortedAnswers" class="option">
+        <div v-for="a in props.answers" class="option">
                 <QuestionOption :option="a" :active="active" @setactive="updateActive"/>
         </div>
         <div class="next-button">

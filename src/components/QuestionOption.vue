@@ -1,13 +1,17 @@
 <script setup lang="ts">
-import { computed, ref, Ref } from "vue";
+import { computed, ref, Ref, watch } from "vue";
 
 
 const emit = defineEmits(["submit", "setactive"]);
 const props = defineProps<{ option: string; active: string }>();
 const choice: Ref<HTMLButtonElement | null> = ref(null);
+// console.log('already selected? ' + props.isAlreadySelected)
+
+const isActive = computed(() => {
+  return props.active})
 
 const buttonWrapper = computed(() => ({
-  active: props.active === props.option ? true : false,
+  active: isActive.value === props.option ? true : false,
   "button-wrapper": true,
 }));
 
@@ -15,6 +19,13 @@ console.log(props.active);
 const setActiveAnswer = () => {
   emit("setactive", props.option);
 };
+
+watch(
+  () => props.active,
+  () => {
+    console.log('in option component active changed to' + props.active)
+  }
+)
 </script>
 
 <template>

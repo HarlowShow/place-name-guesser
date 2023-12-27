@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import IconButton from './ui/IconButton.vue'
-import HelpIcon from './icons/HelpIcon.vue'
+import BackIcon from './icons/BackIcon.vue'
 // const emit = defineEmits(['updateStage'])
 // const start = (() => {
 //     emit('updateStage')
@@ -8,8 +8,8 @@ import HelpIcon from './icons/HelpIcon.vue'
 </script>
 
 <template>
-    <IconButton class="icon-box">
-        <HelpIcon />
+    <IconButton>
+        <BackIcon />
     </IconButton>
 </template>
 
