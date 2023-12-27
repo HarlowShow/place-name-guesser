@@ -11,15 +11,13 @@ const activeAnswer: Ref<string> = ref('')
 }
 
 const prevAnswers: Ref<string[]> = ref([])
-
 const props = defineProps<{ answers: string[], results: result[], index: number }>()
-// let sortedAnswers = props.answers.sort(() => Math.random() - 0.5)
 
 const updateCount = (() =>  {
     // if answer not selected or not selected previously
     if (activeAnswer.value.length === 0 && !prevAnswers.value[props.index]) {
-        console.log(prevAnswers.value[props.index])
-        console.log(props.index)
+        // console.log(prevAnswers.value[props.index])
+        // console.log(props.index)
         console.log('will show validation message')
     } else if (activeAnswer.value.length === 0){
         // if active not updated, submit previous
@@ -34,9 +32,9 @@ const updateCount = (() =>  {
 })
 
 const updateActive = ((answer: string) => {
-    console.log('updating active')
+    // console.log('updating active')
     activeAnswer.value = answer
-    console.log('updating previous answer to: ' + activeAnswer.value)
+    // console.log('updating previous answer to: ' + activeAnswer.value)
     prevAnswers.value[props.index] = activeAnswer.value
     // console.log('selected: ' + activeAnswer.value)
 })
@@ -44,20 +42,6 @@ const updateActive = ((answer: string) => {
 const active = computed(() => {
     return prevAnswers.value[props.index] ?? activeAnswer.value
 })
-
-// watch(
-//   () => props.answers,
-//   () => {
-//     sortedAnswers = props.answers.sort(() => Math.random() - 0.5)
-//   }
-// )
-
-// watch(
-//   () => props.result,
-//   () => {
-//     console.log('result changed, already selected is now: ' + alreadySelected.value)
-//   }
-// )
 </script>
 
 <template>

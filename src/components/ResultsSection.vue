@@ -9,6 +9,7 @@ type Result = {
   isCorrect: boolean;
 };
 type ResultString = {
+  answer: string;
   isCorrect: boolean;
   string: string;
 };
@@ -22,6 +23,7 @@ const prepareResults = () => {
     const funfact = useFacts(res);
     if (res.isCorrect === true) {
       const resString = {
+        answer: res.answer,
         isCorrect: true,
         string: `${res.answer} is not a real place.`,
       };
@@ -29,6 +31,7 @@ const prepareResults = () => {
       resultStrings.push(resString);
     } else {
       const resString = {
+        answer: res.answer,
         isCorrect: false,
         string: `${funfact}`,
       };
@@ -57,7 +60,7 @@ const playAgain = () => {
       </div>
       <div class="results" v-for="(string, index) in strings">
         <div class="result-label">
-            <h2>Question {{ index + 1 }}:</h2>
+            <h2>Question {{ index + 1 }} - {{ string.answer }}:</h2>
             <h2 v-if="string.isCorrect === true" class="correct">Correct</h2>
             <h2 v-else class="incorrect">Incorrect!</h2>
         </div>
@@ -122,5 +125,19 @@ h3 {
 
 .incorrect {
   color: var(--color-red);
+}
+
+@media (max-width: 640px) {
+
+  .result-label {
+    flex-direction: column;
+  }
+
+  .correct, .incorrect {
+    line-height: 1;
+  }
+ .quiz {
+  padding: 1rem;
+ }
 }
 </style>

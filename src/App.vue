@@ -60,7 +60,7 @@ const toggleModal = (() => {
   display: flex;
   place-items: center;
   justify-content: center;
-  width: 320px;
+  width: 360px;
 }
 
 @media (min-width: 640px) {
@@ -69,9 +69,9 @@ const toggleModal = (() => {
   }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 400px) {
   .content {
-    width: 250px;
+    width: 320px;
   }
 
   .quiz {

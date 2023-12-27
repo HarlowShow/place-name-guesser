@@ -13,5 +13,5 @@ export function useFacts(res: Result) {
 
 export function testFacts(res: string) {
   const fact = funFacts[res]
-  console.log('place was: ' + res + 'fun fact was: ' + fact)
+  // console.log('place was: ' + res + 'fun fact was: ' + fact)
 }

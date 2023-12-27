@@ -30,14 +30,14 @@ const submitAnswer = ((ans: answerTuple) => {
   let isCorrectAnswer = false
   const idx = ans[0]
   const string = ans[1]
-  console.log('answer submitted at index: ' + idx + 'and chosen string was: ' + string)
-  console.log('correct answer for this question should be: ' + correctAnswers[idx])
+  // console.log('answer submitted at index: ' + idx + 'and chosen string was: ' + string)
+  // console.log('correct answer for this question should be: ' + correctAnswers[idx])
   // console.log('chosen answer' + ans)
   if (string === correctAnswers[idx]) {
-    console.log('correct')
+    // console.log('correct')
     isCorrectAnswer = true
   } else {
-    console.log('incorrect')
+    // console.log('incorrect')
   }
   const res = {
     answer: string,
@@ -89,7 +89,7 @@ h1.question-number {
 
 .heading-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: auto;
   text-transform: uppercase;
   width: 100%;

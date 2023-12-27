@@ -74,7 +74,7 @@ isReady = true
     <div class="meter-wrapper">
         <div class="meter" v-if="isReady === true">
             <span class="average-score" :style="averageStyle">
-                <span class="tooltip" :style="averageTooltip">Average Score</span>
+                <span class="tooltip" :style="averageTooltip">Average Score ({{ rounded }})</span>
             </span>
             <span class="user-score" :style="userStyle">
                 <span class="tooltip-lower" :style="userTooltip">Your Score {{ theSame }}</span>

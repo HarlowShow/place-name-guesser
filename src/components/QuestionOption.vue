@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, Ref, watch } from "vue";
+import { computed, ref, Ref } from "vue";
 
 
 const emit = defineEmits(["submit", "setactive"]);
@@ -15,17 +15,11 @@ const buttonWrapper = computed(() => ({
   "button-wrapper": true,
 }));
 
-console.log(props.active);
+// console.log(props.active);
 const setActiveAnswer = () => {
   emit("setactive", props.option);
 };
 
-watch(
-  () => props.active,
-  () => {
-    console.log('in option component active changed to' + props.active)
-  }
-)
 </script>
 
 <template>
