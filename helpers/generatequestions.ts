@@ -27,6 +27,8 @@ export function useQuestions(real: string[], fake: string[]) {
         thruple.push(thirdChoice)
 
         if (thruple.length === 3) {
+            // const shuffledThruple = thruple.sort(() => 0.5 - Math.random())
+            // questions.push(shuffledThruple)
             questions.push(thruple)
         }
        

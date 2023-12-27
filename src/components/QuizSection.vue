@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { nextTick, ref, Ref } from 'vue'
+import { nextTick, ref, Ref, computed } from 'vue'
 import SingleQuestion from './SingleQuestion.vue'
 import { placeNamesReal, placeNamesFake } from '../../data/answers'
 import { useQuestions } from '../../helpers/generatequestions'
@@ -13,6 +13,11 @@ const [...questions] = questionsRef
 const correctAnswers: string[] = []
 questions.forEach((a) => correctAnswers.push(a[0]))
 const activeQuestion: Ref<string[]> = ref(questions[0])
+console.log('active question: ' + activeQuestion.value)
+
+const shuffledQuestions = computed(() => {
+  return activeQuestion.value.sort(() => 0.5 - Math.random())
+})
 
 type result = {
   answer: string,
@@ -73,7 +78,7 @@ const goToPrevious = (() => {
       <h1 class="question-number centre">Question {{ count + 1 }} of 20</h1>
       <div></div>
     </div>
-    <SingleQuestion :results="results" :index="count" :answers="activeQuestion" @update="nextQuestion"/>
+    <SingleQuestion :results="results" :index="count" :answers="shuffledQuestions" @update="nextQuestion"/>
   </div>
 
 </template>
