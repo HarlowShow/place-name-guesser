@@ -8,7 +8,7 @@ import HelpIcon from './icons/HelpIcon.vue'
 </script>
 
 <template>
-    <IconButton class="icon-box">
+    <IconButton class="icon-box" label="help">
         <HelpIcon />
     </IconButton>
 </template>

@@ -68,7 +68,7 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
   border-radius: var(--button-border-radius);
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   font-family: inherit;
   background-color: #185c36;

@@ -67,7 +67,7 @@ const playAgain = () => {
         <p class="fun-fact">{{ string.string }}</p>
       </div>
     </div>
-    <MainButton @click="playAgain">Play Again</MainButton>
+    <MainButton @click="playAgain" label="play again">Play Again</MainButton>
   </div>
 </template>
 

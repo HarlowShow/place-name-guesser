@@ -8,7 +8,7 @@ import BackIcon from './icons/BackIcon.vue'
 </script>
 
 <template>
-    <IconButton>
+    <IconButton label="back">
         <BackIcon />
     </IconButton>
 </template>

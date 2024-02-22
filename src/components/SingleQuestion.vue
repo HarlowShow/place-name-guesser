@@ -50,7 +50,7 @@ const active = computed(() => {
                 <QuestionOption :option="a" :active="active" @setactive="updateActive"/>
         </div>
         <div class="next-button">
-            <MainButton @click="updateCount">Next</MainButton>
+            <MainButton @click="updateCount" label="next question">Next</MainButton>
         </div>  
     </div>
 

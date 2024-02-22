@@ -8,7 +8,7 @@ import CloseIcon from './icons/CloseIcon.vue'
 </script>
 
 <template>
-    <IconButton class="icon-box">
+    <IconButton class="icon-box" label="close">
        <CloseIcon />
     </IconButton>
 </template>

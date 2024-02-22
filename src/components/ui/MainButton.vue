@@ -1,7 +1,12 @@
+<script setup lang="ts">
+const props = defineProps({
+    label: { type: String, required: true }
+})
+</script>
+
+
 <template>
-
-
-<button class="button-primary">
+<button class="button-primary" :aria-label=props.label>
     <slot>content here</slot>
 </button>
 
