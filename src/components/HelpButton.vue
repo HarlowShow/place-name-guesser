@@ -14,4 +14,8 @@ import HelpIcon from './icons/HelpIcon.vue'
 </template>
 
 <style scoped>
+svg {
+    color: #ECF3EB;
+    font-size: 2rem;
+}
 </style>

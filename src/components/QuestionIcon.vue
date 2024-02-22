@@ -18,9 +18,3 @@
 </g>
 </svg>
 </template>
-
-<style scoped>
-	.st0 {
-        fill:#000000;
-    }
-</style>

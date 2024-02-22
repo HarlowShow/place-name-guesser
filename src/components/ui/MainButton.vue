@@ -20,6 +20,6 @@ const props = defineProps({
     var(--color-two)
   );
 
-  font-weight: 300;
+  font-weight: 400;
 }
 </style>
