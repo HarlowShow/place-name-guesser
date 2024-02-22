@@ -18,10 +18,18 @@ type Result = {
 const onStart = (() => {
   stage.value = 'quiz'
 })
-const onQuizComplete = ((results: Result[]) => {
-  finalResults.value = results
+const onQuizComplete = ((nextStage: Stage, results: Result[] | undefined) => {
+  if (nextStage === 'answers') {
+    if (results!== undefined) {
+      finalResults.value = results
+      stage.value = 'answers'
+    }
+  } else if (nextStage === 'home') {
+    stage.value = 'home'
+  } else {
+    console.warn('issue with onQuizComplete function')
+  }
   // console.log(results)
-  stage.value = 'answers'
 })
 
 const onPlayAgain = (() => {

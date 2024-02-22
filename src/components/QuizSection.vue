@@ -13,7 +13,7 @@ const [...questions] = questionsRef
 const correctAnswers: string[] = []
 questions.forEach((a) => correctAnswers.push(a[0]))
 const activeQuestion: Ref<string[]> = ref(questions[0])
-console.log('active question: ' + activeQuestion.value)
+// console.log('active question: ' + activeQuestion.value)
 
 const shuffledQuestions = computed(() => {
   return activeQuestion.value.sort(() => 0.5 - Math.random())
@@ -53,7 +53,7 @@ const submitAnswer = ((ans: answerTuple) => {
 const nextQuestion = (async (answer: answerTuple) => {
   if (count.value === 19) {
     submitAnswer(answer)
-    emit('updateStage', results)
+    emit('updateStage', 'answers', results)
   } else {
     submitAnswer(answer)
     count.value += 1
@@ -63,7 +63,9 @@ const nextQuestion = (async (answer: answerTuple) => {
 })
 
 const goToPrevious = (() => {
-  if (count.value > 0) {
+  if (count.value === 0) {
+    emit('updateStage', 'home')
+  } else if (count.value > 0) {
     count.value -= 1;
     activeQuestion.value = questions[count.value]
   }
