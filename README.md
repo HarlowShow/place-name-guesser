@@ -1,4 +1,4 @@
-# UK Placename Guesser
+# UK Place Name or Fake Name?
 
 A quiz to explore the weird and wonderful place names of the UK. Guess which of three placenames is fake. You can play it [here](https://placename-guesser.netlify.app/)
 
