@@ -80,6 +80,7 @@ const goToPrevious = (() => {
       <h1 class="question-number centre">Question {{ count + 1 }} of 20</h1>
       <div></div>
     </div>
+    <h2 class="subhead">Which of these three placenames is <b>fake</b>?</h2>
     <SingleQuestion :results="results" :index="count" :answers="shuffledQuestions" @update="nextQuestion"/>
   </div>
 
@@ -92,6 +93,13 @@ h1.question-number {
   color: var(--color-grey);
   padding-top: 0;
   font-weight: 600;
+}
+
+.subhead {
+  font-size: 1rem;
+  color: var(--color-black);
+  font-weight: 400;
+  margin: 0;
 }
 
 .heading-wrapper {
