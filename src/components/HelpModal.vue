@@ -5,7 +5,7 @@
 <template>
     <div class="quiz">
         <h1>Place Name or Fake Name?</h1>
-        <h2>Guess which of the three UK placenames is fake</h2>
+        <h2>Guess which of the three UK place names is fake</h2>
         <p>Place names can include towns, villages, and geographic locations</p>
     </div>
 </template>

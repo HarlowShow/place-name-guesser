@@ -10,7 +10,7 @@ const start = (() => {
     <div class="quiz">
         <div class="title">
             <h1>Place Name or Fake Name?</h1>
-            <h2>Guess which of three UK placenames is fake</h2>
+            <h2>Guess which of three UK place names is fake</h2>
         </div>
       <MainButton @click="start" label="start quiz">Start</MainButton>
     </div>
